@@ -1,0 +1,36 @@
+---
+title: "Winter R Bootcamp"
+author: "Sean Kross"
+date: "December 23, 2015"
+output: html_document
+---
+
+## Welcome to the Winter R Bootcamp!
+
+### Schedule
+
+The Winter R Bootcamp will be taking place at the Johns Hopkins University
+on January 6th, 8th, 11th, 13th, 20th, and 22nd from 1pm to 3:30pm.
+
+### Contact
+
+If you have any questions please send me an email: sean@seankross.com
+
+### Homework and Grading
+
+There will be no graded assignments or in-class assessments. To get the most out
+of this course you should complete the [swirl](http://swirlstats.com)
+courses that will be assigned at the end of each lecture. Students will recieve
+no credit for this course.
+
+### Syllabus
+
+- [Installing R](install.html)
+
+---
+
+### License
+
+All content contained within this site is licensed
+[CC0](https://creativecommons.org/publicdomain/zero/1.0/), though if you do use
+content from this site I'd love to hear about it.

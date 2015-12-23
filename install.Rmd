@@ -1,0 +1,25 @@
+---
+title: "Installing R and R Studio"
+author: "Sean Kross"
+date: "December 23, 2015"
+output: html_document
+---
+
+## What is R?
+
+R is a general purpose programming language. If you've heard about Python, Ruby,
+C, or JavaScript, R can do anything any of those languages can do. The advantage
+that R has over these languages is that R is specifically designed for working
+with data.
+
+## Installing R
+
+R is as easy to install as a web browser. You can install the latest version of
+R from [here](https://cran.r-project.org/). After you download and install R
+you should also install RStudio, which is a computer program that will help you
+write R code. You can download RStudio 
+[here](https://www.rstudio.com/products/rstudio/download/).
+
+---
+
+## [Home](home.html)
