@@ -25,7 +25,12 @@ no credit for this course.
 
 ### Syllabus
 
-- [Installing R](install.html)
+- Installing R
+    - [Notes](install.html)
+    - [Code](install.Rmd)
+- The R Console
+    - [Notes](console.html)
+    - [Code](console.Rmd)
 
 ---
 
