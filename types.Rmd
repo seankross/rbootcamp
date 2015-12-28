@@ -1,0 +1,117 @@
+---
+title: "Types"
+author: "Sean Kross"
+date: "December 27, 2015"
+output: html_document
+---
+
+## What is a type?
+
+Programming languages organize different kinds of data into "types." Programming
+languages do this in order to provide structure and logic to programs. There are 
+four basic data types in R. 
+
+### Numeric
+
+Numbers in R have the numeric type. Numbers work the way you would expect them
+to, in other words you can use them with all of the arithmetic operators:
+`+`, `-`, `*`, `/`, and also with operators for exponentiation `^` and
+[modulus](https://en.wikipedia.org/wiki/Modulo_operation). Numbers also work
+with logical operators which will be explained in the next section.
+
+```{r}
+# Addition
+3 + 2
+
+# Subtraction
+3 - 2
+
+# Multiplication
+3 * 2
+
+# Division
+3 / 2
+
+# Exponentiation
+3^2
+
+# Scientific Notation
+10e2
+
+# Modulus
+10 %% 3
+```
+
+### Logical
+
+Three values in R have the logical type: `TRUE`, `FALSE`, and `NA`. `NA`
+represents missing data in R while `TRUE` and `FALSE` represent the value of a
+logical expression. Expressions that evaluate to logical values often involve
+the logical operators. The following logical operators are usually used to
+compare numbers:
+
+- greater than `>`
+- greater than or equal `>=`
+- less than `<`
+- less than or equal `<=`
+- exactly equal `==`
+- not equal `!=`
+
+Here are some examples using these operators and the resulting logical values:
+
+```{r}
+3 > 10
+9 >= 8
+-3 < 6
+4 <= 23
+5 >= 5
+0.003 == 0.003
+28 != 43
+```
+
+There are other logical operators that are used for relating logical values:
+
+- and `&&`
+- or `||`
+- not `!`
+
+Here are some examples using these operators and the resulting logical values:
+
+```{r}
+TRUE && TRUE
+FALSE && TRUE
+TRUE && FALSE
+FALSE && FALSE
+TRUE || TRUE
+FALSE || TRUE
+TRUE || FALSE
+FALSE || FALSE
+!TRUE
+!FALSE
+```
+
+Logical values can also be used with `==` and `!=` operators.
+
+```{r}
+TRUE == TRUE
+TRUE == FALSE
+TRUE != FALSE
+```
+
+All of these logical operators can be combined in expressions. Here is the order
+of operations in terms of logical operators, which all come after any mathematical
+operations:
+
+1. `>`, `>=`, `<`, `<=`, `==`, `!=`, `!`
+2. `&&`
+3. `||`
+
+Here are examples:
+
+---
+
+### Exercises:
+
+---
+
+[Home](index.html)

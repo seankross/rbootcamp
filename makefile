@@ -13,5 +13,5 @@ files:
 	Rscript -e "rmarkdown::render('$(<F)')"
 
 clean:
-	rm -f *.html
+	rm *.html
   
