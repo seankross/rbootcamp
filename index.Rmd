@@ -29,87 +29,87 @@ no credit for this course.
 
 - Installing R
     - [Notes](install.html)
-    - [Code](install.Rmd)
+    - [R Markdown](install.Rmd)
 - The R Console
     - [Notes](console.html)
-    - [Code](console.Rmd)
+    - [R Markdown](console.Rmd)
 - Types
     - [Notes](types.html)
-    - [Code](types.Rmd)
+    - [R Markdown](types.Rmd)
 - Data Structures
     - [Notes](datastr.html)
-    - [Code](datastr.Rmd)
+    - [R Markdown](datastr.Rmd)
 - Flow Control
     - [Notes](flow.html)
-    - [Code](flow.Rmd)
+    - [R Markdown](flow.Rmd)
 - Loops
     - [Notes](loops.html)
-    - [Code](loops.Rmd)
+    - [R Markdown](loops.Rmd)
 - Functions
     - [Notes](functions.html)
-    - [Code](functions.Rmd)
+    - [R Markdown](functions.Rmd)
     
 #### Lecture 2
 
 - Errors
     - [Notes](errors.html)
-    - [Code](errors.Rmd)
+    - [R Markdown](errors.Rmd)
 - Scope
     - [Notes](scope.html)
-    - [Code](scope.Rmd)
+    - [R Markdown](scope.Rmd)
 - `apply`
     - [Notes](apply.html)
-    - [Code](apply.Rmd)
+    - [R Markdown](apply.Rmd)
 - User Defined Operators
     - [Notes](operators.html)
-    - [Code](operators.Rmd)
+    - [R Markdown](operators.Rmd)
 - Pipes
     - [Notes](pipes.html)
-    - [Code](pipes.Rmd)
+    - [R Markdown](pipes.Rmd)
     
 #### Lecture 3
 
 - Reading & Writing Data
     - [Notes](functions.html)
-    - [Code](functions.Rmd)
+    - [R Markdown](functions.Rmd)
 - `readr`
     - [Notes](functions.html)
-    - [Code](functions.Rmd)
+    - [R Markdown](functions.Rmd)
 - `dplyr`
     - [Notes](functions.html)
-    - [Code](functions.Rmd)
+    - [R Markdown](functions.Rmd)
 - Regex & `stringr`
     - [Notes](functions.html)
-    - [Code](functions.Rmd)
+    - [R Markdown](functions.Rmd)
 
 #### Lecture 4
 
 - Statistical Functions
     - [Notes](functions.html)
-    - [Code](functions.Rmd)
+    - [R Markdown](functions.Rmd)
 - Simulation
     - [Notes](functions.html)
-    - [Code](functions.Rmd)
+    - [R Markdown](functions.Rmd)
 - Test Functions
     - [Notes](functions.html)
-    - [Code](functions.Rmd)
+    - [R Markdown](functions.Rmd)
 - Basic Modeling
     - [Notes](functions.html)
-    - [Code](functions.Rmd)
+    - [R Markdown](functions.Rmd)
     
 #### Lecture 5
 
 - Plotting & Base Graphics
     - [Notes](functions.html)
-    - [Code](functions.Rmd)
+    - [R Markdown](functions.Rmd)
 
 #### Lecture 6
 - R Markdown
     - [Notes](functions.html)
-    - [Code](functions.Rmd)
+    - [R Markdown](functions.Rmd)
 - Shiny
     - [Notes](functions.html)
-    - [Code](functions.Rmd)
+    - [R Markdown](functions.Rmd)
 
 
 ---
