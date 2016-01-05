@@ -22,4 +22,4 @@ write R code. You can download RStudio
 
 ---
 
-## [Home](index.html)
+### [Home](index.html)

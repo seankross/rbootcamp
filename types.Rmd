@@ -9,7 +9,7 @@ output: html_document
 
 Programming languages organize different kinds of data into "types." Programming
 languages do this in order to provide structure and logic to programs. There are 
-four basic data types in R. 
+three basic types in R, though other types exist too.
 
 ### Numeric
 
@@ -108,10 +108,86 @@ operations:
 
 Here are examples:
 
+```{r}
+3 > 4 && 5 <= 10
+4 != 9 || 6 > 0
+6 + 9 >= 15 && 8 * 6 > 3
+5 + 1 > 6 && 4 != 5 || 9 * 7 < 1000 && TRUE != FALSE
+```
+
+#### Exercises
+
+Should the following expressions evaluate to `TRUE` or `FALSE`? Try to work it
+out on paper before you check your answer in the R console.
+
+1. `3 > 9 || 8 >= 2^3`
+2. `5 > 1 && 3 <= 3 && 4 + 9 * 2 <= 5^3 || (4^2 * 3 > 8 * 5 + 2 || 7^3 > 350) && 9^4 <= 5^6`
+3. `[Any R expression that evaluates to a logical value] || TRUE`
+
+### Character
+
+The character type can be thought of as a piece of text, or as a programmer
+might call it a string. Strings are text surrounded by single or double quotes.
+
+```{r}
+"I am a string!"
+'I am also a string!'
+```
+
+There's no difference between a string that is single or double quoted as long
+as it contains the same text. We can test this with the logical operator for
+equality (`==`).
+
+```{r}
+"Are we the same?" == 'Are we the same?'
+```
+
+The logical operators for equality test whether the contents of the string are
+equal. For example:
+
+```{r}
+"Are we the same?" == "No way."
+"I'm unique!" != "We're different!"
+```
+
+### Type Coercion
+
+If you try to use the arithmetic and logical operators we've used with different
+types R will attempt to coerce the operator's *arguments* so that the
+operator can still work without producing an error. Here are examples of adding
+a logical value to a numeric value:
+
+```{r}
+0 + TRUE
+0 + FALSE
+```
+
+As you can see `TRUE` is coerced to 1 and `FALSE` is coerced to 0. This coercion
+also takes place when using logical values with arithmetic operators:
+
+```{r}
+TRUE + TRUE + FALSE + FALSE
+(TRUE + TRUE) * (TRUE + TRUE)
+(4 > 3) + (4 < 3)
+```
+
+The reverse coercion also takes place where numbers become logical values when
+used with logical operators:
+
+```{r}
+1 && TRUE
+0 && TRUE
+```
+
+In this case 0 is always coerced to `FALSE` and any number other than 0 is
+coerced to `TRUE`. More examples:
+
+```{r}
+45 && 300
+0 || 3
+0 && 0 || 4 > 7
+```
+
 ---
 
-### Exercises:
-
----
-
-[Home](index.html)
+### [Home](index.html)

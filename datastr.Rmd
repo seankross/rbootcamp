@@ -1,0 +1,209 @@
+---
+title: "Data Structures"
+author: "Sean Kross"
+date: "January 4, 2016"
+output: html_document
+---
+
+R has four basic data structures: vectors, lists, matricies, and data frames.
+
+### Vectors
+
+Vectors contain data of a single type in 1 dimension. You can create vectors
+by using the `c()` function.
+
+```{r}
+c(1, 2, 3)
+```
+
+Since vectors have types, you can use them with operators to get predictable
+results.
+
+```{r}
+1 + c(1, 2, 3)
+c(1, 2, 3) + c(4, 5, 6)
+c(1, 2, 3) * c(4, 5, 6)
+TRUE & c(TRUE, FALSE)
+TRUE | c(TRUE, FALSE)
+c(TRUE, FALSE) & c(TRUE, FALSE)
+c(FALSE, TRUE) | c(TRUE, FALSE)
+```
+
+As you can see the `&` and `|` operators work with vectors the way `&&` and `||`
+work with individual values.
+
+You can extract individual values from vectors by "indexing" them using single
+brackets (`[]`).
+
+```{r}
+a_vector <- c(6, 7, 8)
+a_vector[1]
+a_vector[2]
+a_vector[3]
+```
+
+### Quickly creating vectors
+
+To quickly create a sequence of integers, use the `:` operator:
+
+```{r}
+1:7
+-4:2
+```
+
+To create a vector that repeats a value several times use the `rep()` function:
+
+```{r}
+rep(5, times = 4)
+rep(3:4, times = 3)
+rep(3:4, times = 3, each = 2)
+rep(TRUE, times = 3)
+rep("four times!", times = 4)
+```
+
+To create a sequence of numbers use the `seq()` function:
+
+```{r}
+seq(1, 5)
+seq(1, 2, by = 0.1)
+seq(1, 2, length.out = 5)
+```
+
+### More about vectors
+
+You can index vectors by using another vector to specify which values you want
+to extract. For example:
+
+```{r}
+hundred <- 100:110
+hundred[c(1, 3, 4)]
+hundred[5:7]
+```
+
+You can also combine vectors by using `c()`:
+
+```{r}
+onetwothree <- c(1, 2, 3)
+fourfivesix <- c(4, 5, 6)
+c(onetwothree, fourfivesix)
+```
+
+It's also possible to change a value in a vector be re-assigning it:
+
+```{r}
+onetwothree
+onetwothree[2] <- 100
+onetwothree
+```
+
+### Matricies
+
+A matrix is like a two dimensional vector. Matricies contain data of a single
+type. You can create a matrix by using the `matrix()` function.
+
+```{r}
+matrix(1:9, nrow = 3)
+matrix(1:9, nrow = 3, byrow = TRUE)
+```
+
+Operators work in a predictable way:
+
+```{r}
+mat <- matrix(2:5, nrow = 2)
+1 + mat
+2 * mat
+```
+
+Notice that multiplying two matricies does not perform matrix multiplication
+according to matrix algebra:
+
+```{r}
+mat * mat
+```
+
+To multiply matricies using linear algebra use the `%*%` operator:
+
+```{r}
+mat %*% mat
+```
+
+You can index a matrix with the syntax `a_matrix[row,column]`.
+
+```{r}
+big_mat <- matrix(1:9, nrow = 3)
+big_mat[1, 2]
+```
+
+You can also get a row or a column of a matrix as a vector by leaving out the
+`row` or `column`:
+
+```{r}
+big_mat[1,]
+big_mat[,2]
+```
+
+Indexing with vectors also works:
+
+```{r}
+big_mat[1:2, 1:2]
+big_mat[3, 2:3]
+big_mat[c(1, 3), c(1, 3)] # The four "corners" of the matrix
+```
+
+You can also re-assign values in a matrix:
+
+```{r}
+big_mat
+big_mat[2, 2] <- 47
+big_mat
+```
+
+You can even re-assign an entire row or column:
+
+```{r}
+big_mat
+big_mat[, 2] <- c(12, 12, 12)
+big_mat[1,] <- c(39, 39, 39)
+big_mat
+```
+
+### Lists
+
+Lists are probably the most universal data structure in R. In its simplest form
+a list is a one dimensional data structure that can contain multiple types:
+
+```{r}
+list1 <- list(1, TRUE, "three")
+list1
+```
+
+Lists can be indexed with double brackets:
+
+```{r}
+list1[[2]]
+list1[[3]]
+```
+
+It's also possible to name each element in a list:
+
+```{r}
+list2 <- list(first = 85, second = "a word")
+list2
+```
+
+You can access named list elements with the syntax `a_list[["name"]]` or
+`a_list$name`:
+
+```{r}
+list2[["first"]]
+list2$second
+```
+
+You can add named elements to existing lists with a similar synatx:
+
+```{r}
+list2[["third"]] <- FALSE
+list2$fourth <- "four"
+list2
+```
+
