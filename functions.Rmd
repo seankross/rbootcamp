@@ -1,0 +1,105 @@
+---
+title: "Functions"
+author: "Sean Kross"
+date: "January 5, 2016"
+output: html_document
+---
+
+In past pages of notes we've seen and used many functions without seriously
+defining what functions are. A function is very similar to a mathematical
+function. A function may have some input and when a function is
+evaluated it either returns a value or it performs some task. In R you can
+define your own functions. Below I'll define a very simple function that
+returns the number 3:
+
+```{r}
+i_return_three <- function(){
+  3
+}
+
+i_return_three()
+```
+
+The last expression of the function is evaluated and the resulting value is
+returned. The function `i_return_three()` takes no arguments. Below I'll
+illustrate a function that takes one argument:
+
+```{r}
+add_one <- function(x){
+  x + 1
+}
+
+add_one(4)
+```
+
+Arguments are variables that are defined within the context of the function.
+Variables that are defined outside of the function are ignored if they share the
+same name as function arguments. Here's an example of what I'm taking about:
+
+```{r}
+y <- 100
+arg_y <- function(y) {
+  y + 1
+}
+
+arg_y(4)
+
+x <- 200
+arg_x <- function(z){
+  x + 1
+}
+
+arg_x(30)
+```
+
+You can define as many arguments for a function as you want:
+
+```{r}
+add_x_y_z <- function(x, y, z){
+  x + y + z
+}
+
+add_x_y_z(3, 6, 9)
+```
+
+You can also set default values for function arguments:
+
+```{r}
+print_a_then_b <- function(a = "a", b = "b"){
+  print(a)
+  print(b)
+}
+
+print_a_then_b()
+print_a_then_b("Hello", "World!")
+print_a_then_b("World!", "Hello") # it's me...
+```
+
+If you explicity specify the value of arguments then the order of arguments
+doesn't matter:
+
+```{r}
+print_a_then_b(b = "This goes on the bottom", a = "This goes on top")
+```
+
+---
+
+### Programming Challange
+
+If you've read through all of the notes for Lecture 1 then you should be able to
+complete these challanges:
+
+1. Write a function that prints the integers from 1 to 100.
+2. Write a function that prints the integers from 1 to 100, except if the
+integer is divisible by three then "Fizz" is printed instead of the number, if
+the integer is divisible by five then "Buzz" is printed instead of the number,
+and if the integer is divisible by three and five then "FizzBuzz" is printed
+instead of the number. You will need to recall how the modulus operator works
+(`%%`).
+3. Write a function with all of the functionality of #2, but the function also
+has two arguments where the first argument is the number where printing should
+start and the second argument is the number where printing should end.
+
+---
+
+### [Home](index.html)

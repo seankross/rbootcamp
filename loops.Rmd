@@ -1,0 +1,67 @@
+---
+title: "Loops"
+author: "Sean Kross"
+date: "January 5, 2016"
+output: html_document
+---
+
+Loops allow you to execute a piece of code multiple times. There are two
+important kinds of loops in R, for loops and while loops.
+
+## For loops
+
+A for loop iterates a variable through all of the elements of a vector or a
+list. Some examples of the syntax are below:
+
+```{r}
+for(i in 1:5){
+  print(i)
+}
+
+number_words <- c("one", "two", "three", "four", "five")
+
+for(i in number_words){
+  print(i)
+}
+```
+
+
+## While loops
+
+While loops continue to be executed while a specified logical expression
+evaluates to `TRUE`. The logical expression in the following example is
+`x < 1`.
+
+```{r}
+x <- -4
+while(x < 1){
+  print(x)
+  x <- x + 1
+}
+```
+
+## Controlling loops
+
+The two functions `break` and `next` manipulate the behavior of loops. The
+`break` function will immediately exit a loop, while the `next` function will
+immediately skip to the next iteration of the loop.
+
+```{r}
+for(i in 8:1000000){
+  print(i)
+  if(i >= 10){
+    break
+  }
+}
+
+for(i in 5:7){
+  if(i == 6){
+    next
+  }
+  print(i)
+}
+```
+
+---
+
+[Home](index.html)

@@ -162,15 +162,16 @@ You can even re-assign an entire row or column:
 
 ```{r}
 big_mat
-big_mat[, 2] <- c(12, 12, 12)
-big_mat[1,] <- c(39, 39, 39)
+big_mat[, 2] <- c(12, 13, 14)
+big_mat[1,] <- c(39, 40, 41)
 big_mat
 ```
 
 ### Lists
 
-Lists are probably the most universal data structure in R. In its simplest form
-a list is a one dimensional data structure that can contain multiple types:
+Lists are the most adaptable data structures in R. You can create a list with
+the `list()` function. In its simplest form a list is a one dimensional data 
+structure that can contain multiple types:
 
 ```{r}
 list1 <- list(1, TRUE, "three")
@@ -207,3 +208,42 @@ list2$fourth <- "four"
 list2
 ```
 
+The most useful thing about lists is that an element of a list can be anything,
+a single value, a vector, a matrix, or even another list:
+
+```{r}
+list3 <- list() # This creates an empty list
+list3$a_vector <- c("I", "am", "a", "vector")
+list3$a_matrix <- matrix(1:8, nrow = 4)
+list3$a_list <- list(one = "1", two = "2", three = "3")
+list3
+```
+
+### Data Frames
+
+A data frame is a two dimensional data structure that can contain multiple
+types of data. You can create a data frame using the function `data.frame()`.
+Unlike a list, a data frame can only contain single values, it cannot contain
+other data sctructures like a list can.
+
+```{r}
+df <- data.frame(numbers = 9:12, truths = rep(TRUE, 4), 
+                 strings = c("Mary", "had a", "little", "lamb."),
+                 stringsAsFactors = FALSE)
+df
+```
+
+Indexing data frames shares some similarities with matricies and lists:
+
+```{r}
+df$numbers
+df$truths
+df[2,2]
+df[1,]
+df[2,]
+df[,3]
+```
+
+---
+
+### [Home](index.html)

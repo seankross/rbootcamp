@@ -1,0 +1,123 @@
+---
+title: "Flow Control"
+author: "Sean Kross"
+date: "January 5, 2016"
+output: html_document
+---
+
+Okay, now the fun begins! Flow control puts many of the concepts we learned in
+[Types & Logic](types.html) to use. We're going to be heavily using the 
+`print()` function which prints a string to the R console. Let's test it out
+now:
+
+```{r}
+print("Hello World!")
+```
+
+## What if?
+
+An if statement tests whether an expression is true and *if* the tested
+expression is true then a defined series of expressions is executed. A few basic
+if statements are illustrated below:
+
+```{r}
+if(TRUE){
+  print("The expression in the parentheses evaluates to TRUE!")
+}
+
+if(FALSE){
+  print("The expression in the parentheses evaluates to TRUE!")
+}
+
+if(3 < 4){
+  print("The expression in the parentheses evaluates to TRUE!")
+}
+
+if(3 > 4){
+  print("The expression in the parentheses evaluates to TRUE!")
+}
+```
+
+As you can see the code within the if statement is only executed if the
+expression inside of the parentheses evaluates to `TRUE`.
+
+## What else?
+
+You can follow an if statement with an *else* statement which contains a series
+of expressions that will only be executed if the expression in parentheses
+evaluates to `FALSE`. Here are a few examples:
+
+```{r}
+if(TRUE){
+  print("The expression in the parentheses evaluates to TRUE!")
+} else {
+  print("The expression in the parentheses evaluates to FALSE!")
+}
+
+if(FALSE){
+  print("The expression in the parentheses evaluates to TRUE!")
+} else {
+  print("The expression in the parentheses evaluates to FALSE!")
+}
+
+if(3 < 4){
+  print("The expression in the parentheses evaluates to TRUE!")
+} else {
+  print("The expression in the parentheses evaluates to FALSE!")
+}
+
+if(3 > 4){
+  print("The expression in the parentheses evaluates to TRUE!")
+} else {
+  print("The expression in the parentheses evaluates to FALSE!")
+}
+```
+
+## Chaining if and else
+
+You can chain if and else statements to check multiple logical expressions. You
+can see the syntax below:
+
+```{r}
+x <- 3
+if(x == 2){
+  print("x is equal to 2.")
+} else if(x == 3){
+  print("x is equal to 3.")
+} else if(x == 4){
+  print("x is equal to 4.")
+} else {
+  print("x is not equal to 2, 3, or 4.")
+}
+
+x <- 5
+if(x == 2){
+  print("x is equal to 2.")
+} else if(x == 3){
+  print("x is equal to 3.")
+} else if(x == 4){
+  print("x is equal to 4.")
+} else {
+  print("x is not equal to 2, 3, or 4.")
+}
+```
+
+Once an expression that evaluates to `TRUE` is reached no other expressions in
+the chain are evaluated even if later expressions are true. For example:
+
+```{r}
+x <- 3
+if(x == 2){
+  print("x is equal to 2.")
+} else if(x == 3){
+  print("x is equal to 3.")
+} else if(x > 2){ # Notice that this expression is true but is not evaluated.
+  print("x is greater than 2.")
+} else {
+  print("x is not equal to 2, 3, or 4.")
+}
+```
+
+---
+
+[Home](index.html)

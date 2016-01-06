@@ -30,10 +30,10 @@ no credit for this course.
 - Installing R
     - [Notes](install.html)
     - [R Markdown](install.Rmd)
-- The R Console
+- The R Console & How to Read these Notes
     - [Notes](console.html)
     - [R Markdown](console.Rmd)
-- Types
+- Types & Logic
     - [Notes](types.html)
     - [R Markdown](types.Rmd)
 - Data Structures
