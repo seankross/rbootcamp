@@ -16,7 +16,7 @@ three basic types in R, though other types exist too.
 Numbers in R have the numeric type. Numbers work the way you would expect them
 to, in other words you can use them with all of the arithmetic operators:
 `+`, `-`, `*`, `/`, and also with operators for exponentiation `^` and
-[modulus](https://en.wikipedia.org/wiki/Modulo_operation). Numbers also work
+[modulus](https://en.wikipedia.org/wiki/Modulo_operation) `%%`. Numbers also work
 with logical operators which will be explained in the next section.
 
 ```{r}
