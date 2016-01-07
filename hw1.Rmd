@@ -1,0 +1,35 @@
+---
+title: "swirl Lessons after Lecture 1"
+author: "Sean Kross"
+date: "January 6, 2016"
+output: html_document
+---
+
+If you haven't used swirl before you should
+read [swirl's site for students](http://swirlstats.com/students.html) and follow
+the instructions on that page.
+
+To install and start swirl run the following:
+
+```{r, eval=FALSE}
+install.packages("swirl")
+library(swirl)
+install_from_swirl("R Programming")
+swirl()
+```
+
+After Lecture 1 you should complete the following swirl lessons in the R
+Programming course:
+
+- Basic Building Blocks
+- Sequences of Numbers
+- Vectors
+- Missing Values
+- Subsetting Vectors
+- Matrices and Data Frames
+- Logic
+- Functions
+
+---
+
+### [Home](index.html)

@@ -48,6 +48,10 @@ no credit for this course.
 - Functions
     - [Notes](functions.html)
     - [R Markdown](functions.Rmd)
+- *Extras*
+    - [swirl Exercises](hw1.html)
+    - [Video Part 1](https://youtu.be/g-737UQlnBc)
+    - [Video Part 2](https://youtu.be/Z6Z4ZXyKAOw)
     
 #### Lecture 2
 
