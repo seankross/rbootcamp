@@ -1,0 +1,66 @@
+---
+title: "Workspace & Files"
+author: "Sean Kross"
+date: "January 7, 2016"
+output: html_document
+---
+
+R can interact with files and folders on your computer. R constantly keeps track
+of a *working directory* which is a folder in which many R functions automatically
+read and write files. Folders and directories are synonymous terms.
+
+You may have never thought about this before, but files and folders on your computer
+are structured like a tree. The root of the tree is your hard drive. All files 
+and folders are contained within your hard drive, and the series of
+folders you might have to navigate to get to a particular file are like the
+branches of a tree. This is sequence of directories is often called a *path*.
+
+By default R's inital working directory is your home folder. If you have a Mac
+your home folder will have the path `/Users/[Your Username]`, while on Windows
+your home folder will have the path `C:\Users\[Your Username]`. Notice that
+on Mac the path to your hard drive, also called the root, is `/` and on
+Windows it is `C:\`.
+
+The function `getwd()` returns R's current working directory as a string:
+
+```{r, eval=FALSE}
+getwd()
+```
+
+```
+## [1] "/Users/sean"
+```
+
+R can create directories and files. You can create a new directory with the
+function `dir.create()`:
+
+```{r, eval=FALSE}
+dir.create("workspace_and_files")
+```
+
+Since our working directory is `/Users/sean`, `dir.create()` creates a new
+directory inside of `/Users/sean`. The path of the new directory we created is
+`/Users/sean/workspace_and_files`.
+
+Let's change our working directory to `/Users/sean/workspace_and_files`. We can
+do this using `setwd()`:
+
+```{r, eval=FALSE}
+setwd("workspace_and_files")
+```
+
+```{r, eval=FALSE}
+getwd()
+setwd()
+list.files()
+dir.create()
+dir.exists()
+file.create()
+file.copy()
+file.edit()
+file.exists()
+file.rename()
+file.path()
+file.path()
+unlink()
+```

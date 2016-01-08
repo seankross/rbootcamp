@@ -55,6 +55,52 @@ no credit for this course.
     
 #### Lecture 2
 
+- Workspace & Files
+    - [Notes](wf.html)
+    - [R Markdown](wf.Rmd)
+- Reading & Writing Data
+    - [Notes](wr.html)
+    - [R Markdown](wr.Rmd)
+- `dplyr`
+    - [Notes](dplyr.html)
+    - [R Markdown](dplyr.Rmd)
+- Regex & `stringr`
+    - [Notes](stringr.html)
+    - [R Markdown](stringr.Rmd)
+- *Extras*
+    - [Data](https://raw.githubusercontent.com/seankross/lego/master/data-tidy/legosets.csv)
+    
+#### Lecture 3
+
+- Plotting & Base Graphics
+    - [Notes](plots.html)
+    - [R Markdown](plots.Rmd)
+
+#### Lecture 4
+
+- Statistical Functions
+    - [Notes](blank.html)
+    - [R Markdown](blank.Rmd)
+- Simulation
+    - [Notes](blank.html)
+    - [R Markdown](blank.Rmd)
+- Test Functions
+    - [Notes](blank.html)
+    - [R Markdown](blank.Rmd)
+- Basic Modeling
+    - [Notes](blank.html)
+    - [R Markdown](blank.Rmd)
+
+#### Lecture 5
+- R Markdown
+    - [Notes](blank.html)
+    - [R Markdown](blank.Rmd)
+- Shiny
+    - [Notes](blank.html)
+    - [R Markdown](blank.Rmd)
+    
+#### Lecture 6
+
 - Errors
     - [Notes](errors.html)
     - [R Markdown](errors.Rmd)
@@ -70,50 +116,6 @@ no credit for this course.
 - Pipes
     - [Notes](pipes.html)
     - [R Markdown](pipes.Rmd)
-    
-#### Lecture 3
-
-- Reading & Writing Data
-    - [Notes](functions.html)
-    - [R Markdown](functions.Rmd)
-- `readr`
-    - [Notes](functions.html)
-    - [R Markdown](functions.Rmd)
-- `dplyr`
-    - [Notes](functions.html)
-    - [R Markdown](functions.Rmd)
-- Regex & `stringr`
-    - [Notes](functions.html)
-    - [R Markdown](functions.Rmd)
-
-#### Lecture 4
-
-- Statistical Functions
-    - [Notes](functions.html)
-    - [R Markdown](functions.Rmd)
-- Simulation
-    - [Notes](functions.html)
-    - [R Markdown](functions.Rmd)
-- Test Functions
-    - [Notes](functions.html)
-    - [R Markdown](functions.Rmd)
-- Basic Modeling
-    - [Notes](functions.html)
-    - [R Markdown](functions.Rmd)
-    
-#### Lecture 5
-
-- Plotting & Base Graphics
-    - [Notes](functions.html)
-    - [R Markdown](functions.Rmd)
-
-#### Lecture 6
-- R Markdown
-    - [Notes](functions.html)
-    - [R Markdown](functions.Rmd)
-- Shiny
-    - [Notes](functions.html)
-    - [R Markdown](functions.Rmd)
 
 
 ---

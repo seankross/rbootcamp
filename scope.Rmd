@@ -1,0 +1,46 @@
+---
+title: "Scope"
+author: "Sean Kross"
+date: "January 7, 2016"
+output: html_document
+---
+
+We already know how easy it is to store data in R using variables. But how does
+a program know the value of a variable at a given time? Consider the following
+program:
+
+```{r, eval=FALSE}
+x <- "Hello!"                   # Line 1
+                                # Line 2
+print_twice <- function(x){     # Line 3
+  print(x)                      # Line 4
+  print(x)                      # Line 5
+}                               # Line 6
+                                # Line 7
+print_twice("Goodbye!")         # Line 8
+```
+
+The variable `x` is assigned the value of `"Hello!"` before the function is
+defined, however the variable `x` is also an argument in the `print_twice`
+function. What will this program print to the R console when this code is run?
+The answer is not intuitive.
+
+We know that data can be stored in variables, but then where are variables
+stored? Variables are stored in an advanced data structures called environments.
+In the context of this course you only need to know two things about 
+environments:
+
+1. There is an environment called the global environment which contains all of
+the variables that you assign values to, except for variables that are assigned
+within a function.
+
+2. Every function has its own environment.
+
+Let's go through the above code example line by line:
+
+
+
+
+---
+
+###[Home](index.html)
