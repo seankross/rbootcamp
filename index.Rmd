@@ -64,17 +64,18 @@ no credit for this course.
 - `dplyr`
     - [Notes](dplyr.html)
     - [R Markdown](dplyr.Rmd)
-- Regex & `stringr`
-    - [Notes](stringr.html)
-    - [R Markdown](stringr.Rmd)
 - *Extras*
     - [Data](https://raw.githubusercontent.com/seankross/lego/master/data-tidy/legosets.csv)
+    - [Lego analysis](lego.html)
     
 #### Lecture 3
 
 - Plotting & Base Graphics
     - [Notes](plots.html)
     - [R Markdown](plots.Rmd)
+- Regex & `stringr`
+    - [Notes](stringr.html)
+    - [R Markdown](stringr.Rmd)
 
 #### Lecture 4
 

@@ -49,6 +49,17 @@ do this using `setwd()`:
 setwd("workspace_and_files")
 ```
 
+Just to make sure that our working directory has changed let's get the current
+working directory with `getwd()`.
+
+```{r, eval=FALSE}
+getwd()
+```
+
+```
+## [1] "/Users/sean/workspace_and_files"
+```
+
 ```{r, eval=FALSE}
 getwd()
 setwd()

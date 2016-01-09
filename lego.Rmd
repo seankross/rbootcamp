@@ -1,0 +1,95 @@
+---
+title: "Lego example"
+author: "Sean Kross"
+date: "January 8, 2016"
+output: html_document
+---
+
+First import the data:
+
+```{r}
+legos <- read.csv("https://raw.githubusercontent.com/seankross/lego/master/data-tidy/legosets.csv", stringsAsFactors = FALSE)
+```
+
+We can look at the top of the data frame using the `head()` function:
+
+```{r}
+head(legos)
+```
+
+Now let's look at the number of sets that came out each year by using the
+`table()` function:
+
+```{r}
+lego_table <- table(legos$Year)
+lego_table
+```
+
+We can turn this table into a data frame pretty easily. The `names()` function
+will extract the years from the table, while the `as.vector()` function will
+extract the set counts from the table.
+
+```{r}
+years <- names(lego_table)
+counts <- as.vector(lego_table)
+```
+
+Now let's make a new data frame. We'll cast `years` which is a vector of strings
+to be a vector of numbers using the `as.numeric()` function:
+
+```{r}
+lego_sets_per_year <- data.frame(
+  year = as.numeric(years),
+  counts = counts
+)
+
+head(lego_sets_per_year)
+```
+
+Let's make another data frame where we can store the number of sets released
+per decade:
+
+```{r}
+decades <- seq(1970, 2010, by = 10)
+decades
+
+lego_sets_per_decade <- data.frame(
+  decade = decades,
+  counts = rep(0, times = length(decades))
+)
+```
+
+Now we can write a for loop that will calculate the number of sets produced
+per decade and store that number in the data frame we just created.
+
+```{r}
+for(d in decades){
+  rows_1970_or_after <- which(lego_sets_per_year >= d)
+  rows_1979_or_before <- which(lego_sets_per_year < d + 10)
+  
+  # See explanation of intersect() below
+  rows <- intersect(rows_1970_or_after, rows_1979_or_before)
+  
+  insert_in_row <- which(lego_sets_per_decade$decade == d)
+  lego_sets_per_decade[insert_in_row, 2] <- sum(lego_sets_per_year$counts[rows])
+}
+
+lego_sets_per_decade
+```
+
+Let's visualize this data frame as a bar plot:
+
+```{r}
+barplot(lego_sets_per_decade$counts, names.arg = lego_sets_per_decade$decade)
+```
+
+The `intersect()` function takes two vectors as arguments and returns the 
+elements that are in both vectors:
+
+```{r}
+intersect(c(2, 4, 6, 8, 10), c(1, 2, 4, 8, 16))
+```
+
+---
+
+### [Home](index.html)
