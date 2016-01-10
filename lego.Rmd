@@ -90,6 +90,19 @@ elements that are in both vectors:
 intersect(c(2, 4, 6, 8, 10), c(1, 2, 4, 8, 16))
 ```
 
+### Another approach to the `for` loop above
+
+```{r}
+for(d in decades){
+  rows <- which(lego_sets_per_year$year >= d & lego_sets_per_year$year < d + 10)
+  
+  insert_in_row <- which(lego_sets_per_decade$decade == d)
+  lego_sets_per_decade[insert_in_row, 2] <- sum(lego_sets_per_year$counts[rows])
+}
+
+lego_sets_per_decade
+```
+
 ---
 
 ### [Home](index.html)
