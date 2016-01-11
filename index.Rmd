@@ -75,6 +75,10 @@ no credit for this course.
 - R Markdown
     - [Notes](rmd.html)
     - [R Markdown](rmd.Rmd)
+- *Extras*
+    - [swirl Exercises](hw2.html)
+    - [Video Part 1](https://youtu.be/-qCfAuZUL54)
+    - [Video Part 2](https://youtu.be/UjhOkpq2ta4)
 
 #### Lecture 4
 

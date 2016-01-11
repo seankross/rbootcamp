@@ -5,4 +5,39 @@ date: "January 11, 2016"
 output: html_document
 ---
 
+Markdown is a simple markdown language for producing HTML web pages. Below I'll
+show markdown code, and then how that code looks when rendered to HTML:
 
+---
+
+### Headings
+
+Markdown:
+
+```
+# I'm huge!
+## I'm still large
+### I'm a reasonable size
+```
+
+# I'm huge!
+## I'm still large
+### I'm a reasonable size
+
+---
+
+### Bold and italic
+
+```
+*italic*
+**bold**
+***bold and italic***
+```
+
+*italic*
+**bold**
+***bold and italic***
+
+---
+
+### [Home](index.html)

@@ -1,0 +1,19 @@
+---
+title: "swirl Lessons after Lecture 3"
+author: "Sean Kross"
+date: "January 11, 2016"
+output: html_document
+---
+
+After Lecture 3 you should complete the following swirl lessons in the
+Exploratory Data Analysis course:
+
+- Principles of Analytic Graphs
+- Exploratory Graphs
+- Graphics Devices in R
+- Plotting Systems
+- Base Plotting System
+
+---
+
+### [Home](index.html)
