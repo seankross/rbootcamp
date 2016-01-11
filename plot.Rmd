@@ -147,6 +147,55 @@ before:
 boxplot(avg_temp$baltimore)
 ```
 
+By providing two vectors, we can see two boxplots next to each other:
+
+```{r}
+boxplot(avg_temp$baltimore, avg_temp$chicago)
+```
+
+Like in previous exampels we can add names, axis labels, and a title:
+
+```{r}
+boxplot(avg_temp$baltimore, avg_temp$chicago, 
+        names = c("Baltimore", "Chicago"), 
+        main = "Temperature in Two Cities Over 10 Days",
+        ylab = "Temperature")
+```
+
+### Bar Plots
+
+```{r}
+#
+```
+
+### Multiple Plots
+
+You can produce a figure containing multiple plots using the `par()` function.
+To make two plots side by side, use `par(mfrow=c(1,2))`:
+
+```{r, warning=FALSE}
+par(mfrow=c(1,2))
+plot(1:10)
+hist((1:10)^2)
+```
+
+To make to put four plots in one figure use `par(mfrow=c(2,2))`:
+
+```{r}
+par(mfrow=c(2,2))
+plot(1:10)
+hist((1:10)^2)
+boxplot(1:10)
+barplot(1:10)
+```
+
+To return to making one plot at a time use `par(mfrow=c(1,1))`:
+
+```{r}
+par(mfrow=c(1,1))
+plot(1:10)
+```
+
 ---
 
 ### [Home](index.html)
