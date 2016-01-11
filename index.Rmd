@@ -61,9 +61,6 @@ no credit for this course.
 - Reading & Writing Data
     - [Notes](wr.html)
     - [R Markdown](wr.Rmd)
-- `dplyr`
-    - [Notes](dplyr.html)
-    - [R Markdown](dplyr.Rmd)
 - *Extras*
     - [Data](https://raw.githubusercontent.com/seankross/lego/master/data-tidy/legosets.csv)
     - [Lego analysis](lego.html)
@@ -71,11 +68,11 @@ no credit for this course.
 #### Lecture 3
 
 - Plotting & Base Graphics
-    - [Notes](plots.html)
-    - [R Markdown](plots.Rmd)
-- Regex & `stringr`
-    - [Notes](stringr.html)
-    - [R Markdown](stringr.Rmd)
+    - [Notes](plot.html)
+    - [R Markdown](plot.Rmd)
+- R Markdown
+    - [Notes](rmd.html)
+    - [R Markdown](rmd.Rmd)
 
 #### Lecture 4
 
@@ -93,12 +90,14 @@ no credit for this course.
     - [R Markdown](blank.Rmd)
 
 #### Lecture 5
-- R Markdown
-    - [Notes](blank.html)
-    - [R Markdown](blank.Rmd)
-- Shiny
-    - [Notes](blank.html)
-    - [R Markdown](blank.Rmd)
+
+- Regex & `stringr`
+    - [Notes](stringr.html)
+    - [R Markdown](stringr.Rmd)
+- `dplyr`
+    - [Notes](dplyr.html)
+    - [R Markdown](dplyr.Rmd)
+
     
 #### Lecture 6
 
