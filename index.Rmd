@@ -83,17 +83,14 @@ no credit for this course.
 #### Lecture 4
 
 - Statistical Functions
-    - [Notes](blank.html)
-    - [R Markdown](blank.Rmd)
+    - [Notes](stat.html)
+    - [R Markdown](stat.Rmd)
 - Simulation
-    - [Notes](blank.html)
-    - [R Markdown](blank.Rmd)
-- Test Functions
-    - [Notes](blank.html)
-    - [R Markdown](blank.Rmd)
-- Basic Modeling
-    - [Notes](blank.html)
-    - [R Markdown](blank.Rmd)
+    - [Notes](simulation.html)
+    - [R Markdown](simulation.Rmd)
+- Basic Linear Modeling
+    - [Notes](linear.html)
+    - [R Markdown](linear.Rmd)
 
 #### Lecture 5
 
@@ -131,3 +128,5 @@ no credit for this course.
 All content contained within this site is licensed
 [CC0](https://creativecommons.org/publicdomain/zero/1.0/), though if you do use
 content from this site I'd love to hear about it.
+
+This site is hosted on GitHub. Pull requests are welcome: https://github.com/seankross/rbootcamp

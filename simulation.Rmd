@@ -1,0 +1,92 @@
+---
+title: "Simulation"
+author: "Sean Kross"
+date: "January 12, 2016"
+output: html_document
+---
+
+R is wonderful at generating data and conducting simulations of events. In my
+opinion there are four main functions for running simulations:
+
+1. `sample()`
+2. `replicate()`
+3. The `r*()` family of functions.
+4. The `*apply()` family of functions.
+
+### `sample()`
+
+If we wanted to simulate flipping a coin or rolling a die, `sample()` is our
+go-to function. The `sample()` function in its leanest form can take any vector
+as an argument:
+
+```{r, echo=FALSE}
+set.seed(1-12-2016)
+```
+
+```{r}
+sample(1:6)
+```
+
+The function randomly picks a number in the vector without replacing it, and
+then it continues to randomly pick numbers without replacing them until it
+runs out of numbers. To simulate rolling a die, we need to specify the
+`replace` argument and the `size` argument.
+
+```{r}
+sample(1:6, size = 1, replace = TRUE)
+```
+
+This simulates rolling a single die once. To simulate multiple dice rolls we can
+increase the `size` argument:
+
+```{r}
+sample(1:6, size = 8, replace = TRUE)
+```
+
+As you can see the number 4 and 5 are rolled multiple times because we are
+sampling elements from the vector with replacement.
+
+### `replicate()`
+
+The `replicate()` function takes two arguments, one is an R expression, and the
+other is the number of times you want that R expression to be replicated. For
+example if you wanted to compute the mean of 100 rolls of a die you could do
+the following:
+
+```{r}
+mean(sample(1:6, size = 100, replace = TRUE))
+```
+
+Now imagine that you want to compute 100 means of 100 die rolls. You could
+accomplish this task using `replicate()`:
+
+```{r}
+replicate(100, mean(sample(1:6, size = 100, replace = TRUE)))
+```
+
+### The `r*()` functions
+
+`r*()` refers to functions like `rnorm()` and `rbinom()` which generate
+random variables from their respective distributions. These functions are
+discussed more in-depth in the the [statistical functions](stat.html) notes.
+For a list of the distributions that come with R, enter `help("Distributions")`
+into the R console.
+
+Below I'll illustrate how you could use `rbinom()` to simulate trials of
+flipping a fair coin. The `rbinom()` function needs three arguments: the number
+of trials you wish to perform, the number of coins to flip per trial, and the
+probability of the coin landing on heads. In the example below I'll simulate
+performing 10 trials, each trial flipping 9 coins, and the probability of heads
+will be 50%:
+
+```{r}
+rbinom(10, 5, .5)
+```
+
+As you can see `rbinom()` returns a vector where each element of the vector
+represents the number of coins that landed on heads in that trial.
+
+---
+
+### [Home](index.html)
+

@@ -12,8 +12,6 @@ show markdown code, and then how that code looks when rendered to HTML:
 
 ### Headings
 
-Markdown:
-
 ```
 # I'm huge!
 ## I'm still large
@@ -26,17 +24,144 @@ Markdown:
 
 ---
 
+### Prose
+
+```
+It was the best of times, it was the worst of times, it was the age of wisdom, 
+it was the age of foolishness, it was the epoch of belief, it was the epoch of 
+incredulity, it was the season of Light, it was the season of Darkness, it was 
+the spring of hope, it was the winter of despair, we had everything before us, 
+we had nothing before us, we were all going direct to Heaven, we were all going 
+direct the other way – in short, the period was so far like the present period, 
+that some of its noisiest authorities insisted on its being received, for good 
+or for evil, in the superlative degree of comparison only.
+```
+
+It was the best of times, it was the worst of times, it was the age of wisdom, 
+it was the age of foolishness, it was the epoch of belief, it was the epoch of 
+incredulity, it was the season of Light, it was the season of Darkness, it was 
+the spring of hope, it was the winter of despair, we had everything before us, 
+we had nothing before us, we were all going direct to Heaven, we were all going 
+direct the other way – in short, the period was so far like the present period, 
+that some of its noisiest authorities insisted on its being received, for good 
+or for evil, in the superlative degree of comparison only.
+
+---
+
 ### Bold and italic
 
 ```
 *italic*
+
 **bold**
+
 ***bold and italic***
 ```
 
 *italic*
+
 **bold**
+
 ***bold and italic***
+
+---
+
+### Lists
+
+```
+- an item
+- another item
+- a thrid item
+```
+
+- an item
+- another item
+- a thrid item
+
+```
+1. an item
+2. another item
+3. a thrid item
+```
+
+1. an item
+2. another item
+3. a thrid item
+
+---
+
+### Links
+
+```
+[JHU's Homepage](http://www.jhu.edu)
+```
+
+[JHU's Homepage](http://www.jhu.edu)
+
+---
+
+### Images
+
+```
+![A seagull](https://farm9.staticflickr.com/8221/8259009216_4b4e6f994c_m.jpg)
+```
+
+![A seagull](https://farm9.staticflickr.com/8221/8259009216_4b4e6f994c_m.jpg)
+
+Note: Even though the text inside of the square brackets is not displayed, it's
+important to include a description of the image. People who are visually 
+impaired may be browsing your web page, and they could be using software that
+will read them a description of the image.
+
+---
+
+### Quotes
+
+```
+> Good night, Mrs. Calabash, wherever you are.
+```
+
+> Good night, Mrs. Calabash, wherever you are.
+
+---
+
+### Code
+    ```
+    // This is a Java program from
+    // https://docs.oracle.com/javase/tutorial/getStarted/application/
+
+    class HelloWorldApp {
+        public static void main(String[] args) {
+            System.out.println("Hello World!"); // Display the string.
+        }
+    }
+
+    ```
+    
+```
+// This is a Java program from
+// https://docs.oracle.com/javase/tutorial/getStarted/application/
+
+class HelloWorldApp {
+    public static void main(String[] args) {
+        System.out.println("Hello World!"); // Display the string.
+    }
+}
+
+```
+
+---
+
+### Inline Code
+
+```
+You can use the `c()` function to make vectors.
+```
+
+You can use the `c()` function to make vectors.
+
+---
+
 
 ---
 
