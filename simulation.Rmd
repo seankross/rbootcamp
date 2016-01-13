@@ -86,6 +86,10 @@ rbinom(10, 5, .5)
 As you can see `rbinom()` returns a vector where each element of the vector
 represents the number of coins that landed on heads in that trial.
 
+### The `*apply()` functions
+
+
+
 ---
 
 ### [Home](index.html)

@@ -1,0 +1,94 @@
+---
+title: "Basic Linear Modeling"
+author: "Sean Kross"
+date: "January 13, 2016"
+output: html_document
+---
+
+### Simple Linear Regression
+
+For our exploration of linear modeling we're going to use a dataset that comes
+packaged with R called `trees`. This dataset contains information about the
+girth, height, and volume of 31 trees. Use `help("trees")` for more infromation
+about this dataset. Let's examine the relationship between the girth and the
+volume of these trees by plotting them:
+
+```{r}
+plot(trees$Girth, trees$Volume, xlab = "Girth", ylab = "Volume", main = "Trees")
+```
+
+At first glace it looks like there's a relationship! You could imagine drawing
+a straight line through most of the points on this graph, and even the points
+that you missed would be close to the line. This "strightness" is called a
+linear relationship. R provides functions for modeling linear relationships
+and other kinds of relationships between data. The most simple of these
+functions is the `lm()` function. To use the `lm()` function you need to provide
+a formula, which represents a relationship between variables, and a data frame
+that maps the variables in the formula to columns in the data frame. I'll use
+`lm()` now to construct a model of the relationship between tree volume and
+girth:
+
+```{r}
+tree_model1 <- lm(Volume ~ Girth, data = trees)
+tree_model1
+```
+
+The model itself is an advanced data structure that resembles a list. When I
+examine the `tree_model1` variable on the R console it prints the y-axis
+intercept of the regression line and the slope of the regression line. Let's
+draw the regression line using `abline()`.
+
+```{r}
+plot(trees$Girth, trees$Volume, xlab = "Girth", ylab = "Volume", main = "Trees")
+abline(tree_model1)
+```
+
+```{r}
+predictions1 <- predict(tree_model1, data.frame(Girth = 11:14))
+predictions1
+
+plot(trees$Girth, trees$Volume, xlab = "Girth", ylab = "Volume", main = "Trees")
+abline(tree_model1)
+points(11:14, predictions1, col = "red")
+```
+
+```{r}
+plot(tree_model1$residuals, ylim = c(-10, 10))
+abline(h = 0, col = "red")
+```
+
+### Multiple Linear Regression
+
+```{r}
+plot(trees$Height, trees$Volume, xlab = "Height", ylab = "Volume", main = "Trees")
+```
+
+```{r}
+tree_model2 <- lm(Volume ~ Girth + Height, data = trees)
+tree_model2
+```
+
+```{r}
+predictions2 <- predict(tree_model2, data.frame(Girth = c(12, 14, 16), 
+                                                Height = c(70, 73, 76)))
+predictions2
+```
+
+```{r}
+plot(trees$Girth, trees$Volume, xlab = "Girth", ylab = "Volume", main = "Trees")
+points(c(12, 14, 16), predictions2, col = "red")
+abline(tree_model1)
+
+plot(trees$Height, trees$Volume, xlab = "Girth", ylab = "Volume", main = "Trees")
+points(c(70, 73, 76), predictions2, col = "red")
+```
+
+```{r}
+plot(tree_model1$residuals, ylim = c(-10, 10))
+points(tree_model2$residuals, ylim = c(-10, 10), col = "blue")
+abline(h = 0, col = "red")
+```
+
+---
+
+### [Home](index.html)

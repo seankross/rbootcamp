@@ -20,7 +20,7 @@ If you have any questions please send me an email: sean@seankross.com
 
 There will be no graded assignments or in-class assessments. To get the most out
 of this course you should complete the [swirl](http://swirlstats.com)
-courses that will be assigned at the end of each lecture. Students will recieve
+courses that will be assigned at the end of each lecture. Students will receive
 no credit for this course.
 
 ### Syllabus
@@ -83,14 +83,18 @@ no credit for this course.
 #### Lecture 4
 
 - Statistical Functions
-    - [Notes](stat.html)
-    - [R Markdown](stat.Rmd)
+    - [Notes](http://seankross.com/notes/dpqr/)
+    - [R Markdown](https://raw.githubusercontent.com/seankross/seankross.github.io/master/notes/dpqr/index.Rmd)
 - Simulation
     - [Notes](simulation.html)
     - [R Markdown](simulation.Rmd)
 - Basic Linear Modeling
     - [Notes](linear.html)
     - [R Markdown](linear.Rmd)
+- *Extras*
+    - [swirl Exercises](blank.html)
+    - [Video Part 1](blank)
+    - [Video Part 2](blank)
 
 #### Lecture 5
 
