@@ -1,0 +1,21 @@
+---
+title: "swirl Lessons after Lecture 3"
+author: "Sean Kross"
+date: "January 13, 2016"
+output: html_document
+---
+
+After Lecture 4 you should complete the following swirl lessons in the
+Statistical Inference course:
+
+- Introduction
+- Probability1
+- Probability2
+- ConditionalProbability
+- Expectations
+- Variance
+- CommonDistros
+
+---
+
+### [Home](index.html)

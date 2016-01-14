@@ -1,5 +1,5 @@
 ---
-title: "swirl Lessons after Lecture 3"
+title: "swirl Lessons After Lecture 3"
 author: "Sean Kross"
 date: "January 11, 2016"
 output: html_document
@@ -13,6 +13,21 @@ Exploratory Data Analysis course:
 - Graphics Devices in R
 - Plotting Systems
 - Base Plotting System
+
+Before starting this swirl course you should install a few packages by taking
+these steps:
+
+1. Run `install.packages("Rcpp")`.
+2. You will be asked `Do you want to install from sources the package which 
+needs compilation?`. Type `n` into the R console and then press enter.
+3. Download [this](https://cran.r-project.org/src/contrib/Archive/ggplot2/ggplot2_1.0.1.tar.gz)
+file.
+4. Run `install.packages(file.choose(), repos = NULL, type="source")` and
+select the file you just downloaded.
+5. Run `install.packages("jpeg")`.
+
+You should now have no problems with the lessons in the Exploratory Data 
+Analysis course.
 
 ---
 

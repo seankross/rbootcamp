@@ -92,9 +92,8 @@ no credit for this course.
     - [Notes](linear.html)
     - [R Markdown](linear.Rmd)
 - *Extras*
-    - [swirl Exercises](blank.html)
-    - [Video Part 1](blank)
-    - [Video Part 2](blank)
+    - [swirl Exercises](hw3.html)
+    - [Video](https://youtu.be/-Mn8EXSeJfs)
 
 #### Lecture 5
 
