@@ -64,7 +64,7 @@ no credit for this course.
 - *Extras*
     - [Data](https://raw.githubusercontent.com/seankross/lego/master/data-tidy/legosets.csv)
     - [Lego analysis](lego.html)
-    - [Video Part 1](https://youtu.be/LvcUUaIrbVo)
+    - [Video Part 1](https://youtu.be/zI85-Rd6mZ0)
     - [Video Part 2](https://youtu.be/iOafN_viXXo)
     
 #### Lecture 3
