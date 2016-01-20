@@ -1,0 +1,81 @@
+---
+title: "`dplyr` & `magrittr`"
+author: "Sean Kross"
+date: "January 19, 2016"
+output: html_document
+---
+
+The `dplyr` package can be used for manipulating data frames. You can insatll
+it by entering `install.packages("dplyr")` into your R console. After 
+installation use `library(dplyr)` to load the package.
+
+```{r, echo=FALSE}
+library(dplyr)
+library(knitr)
+library(magrittr)
+```
+
+Retrieve the Lego set data since you're familiar with it:
+
+```{r}
+legos <- read.csv("https://raw.githubusercontent.com/seankross/lego/master/data-tidy/legosets.csv", stringsAsFactors = FALSE)
+```
+
+### The Basics
+
+You can cause the `legos` data frame to "behave" a little more nicely by
+wrapping it with the `tbl_df()` function. I'll do this quickly:
+
+```{r}
+legos <- tbl_df(legos)
+#kable(head(legos))
+```
+
+Let's use `dplyr`'s functions to rearrange the `legos` data frame. You can
+re-order the rows of a data frame using the `arrange()` function:
+
+```{r}
+# Order `legos` by the number of pieces
+#arrange(legos, Pieces)
+```
+
+```{r}
+legos_simple <- select(legos, Item_Number, Pieces, USD_MSRP)
+legos_simple <- filter(legos_simple, !is.na(USD_MSRP))
+legos_simple <- mutate(legos_simple, PPP = USD_MSRP / Pieces)
+legos_simple <- arrange(legos_simple, desc(PPP))
+legos_simple <- filter(legos_simple, PPP < .75)
+plot(jitter(rep(0, length(legos_simple$PPP))), legos_simple$PPP,
+     xlim = c(-.05, .05))
+```
+
+```{r}
+legos_simple %<>%
+  select(Item_Number, Pieces, USD_MSRP) %>%
+  filter(!is.na(USD_MSRP)) %>%
+  filter(!is.na(Pieces)) %>%
+  mutate(PPP = USD_MSRP / Pieces) %>%
+  arrange(desc(PPP)) %>%
+  
+  tbl_df() %T>%
+  print() %>%
+  filter(PPP < .75) %>%
+  print()
+```
+#essential
+arrange
+desc
+distinct
+filter
+mutate
+group_by
+joins
+n
+rename
+select
+slice
+summarize
+bind_rows
+bind_cols
+```
+

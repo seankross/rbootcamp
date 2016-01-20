@@ -79,7 +79,7 @@ plot(trees$Girth, trees$Volume, xlab = "Girth", ylab = "Volume", main = "Trees")
 points(c(12, 14, 16), predictions2, col = "red")
 abline(tree_model1)
 
-plot(trees$Height, trees$Volume, xlab = "Girth", ylab = "Volume", main = "Trees")
+plot(trees$Height, trees$Volume, xlab = "Height", ylab = "Volume", main = "Trees")
 points(c(70, 73, 76), predictions2, col = "red")
 ```
 

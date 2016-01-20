@@ -1,0 +1,126 @@
+---
+title: "Strings, regex, and `stringr`"
+author: "Sean Kross"
+date: "January 20, 2016"
+output: html_document
+---
+
+### Basic String Functions
+
+We've been dealig with strings for a while now, but before we proceed there are
+two basic functions that deal with strings that you should be aware of. The
+first is `paste()` which pastes strings together. A few examples of using
+paste are below:
+
+```{r}
+paste("It was the best of times", "it was the worst of times")
+
+paste("It was the", c("best", "worst"))
+
+paste("It was the", c("best", "worst"), "of times")
+
+paste("It was the best of times", "it was the worst of times", sep = ", ")
+
+paste(c("best", "worst"), collapse = "")
+
+paste("It was the", c("best", "worst"), collapse = "")
+```
+
+Another generally useful string function is `nchar()`, which counts the number
+of characters in a string.
+
+```{r}
+nchar("Hello, it's me")
+nchar(c("I", "was", "wondering", "if", "after", "all", "these", "years", "you'd", "like", "to", "meet"))
+```
+
+### Regular expressions
+
+(For context, Perl is a programming language)
+
+![xkcd Perl Problems](http://imgs.xkcd.com/comics/perl_problems.png)
+
+In extraordinarily broad terms data is stored on computers either as binary data
+or as text. The practical difference between these two methods of storing data
+is that text is comprehensible to the human eye. Although a dataset might be
+comprehensible to your eye, it may not be comprehensible to a computer. In
+order to make text data comprehensible to a computer, data often needs to be
+cleaned.
+
+Data can often be cleaned programmatically, in other words, often you can write
+a computer program (an R function) to systematically clean data. You can get
+text data into R using `readLines()` which returns a character vector where
+each element of the vector is a line of the text file you provided as an
+argument. You might want to search these strings for patterns so that you can
+manipulate those patterns somehow. 
+
+Regular expressions are a feature that are built into many programming langauges
+that can be used for searching strings. You can create a regular expression by
+combining metacharacters, some of which are listed below.
+
+
+### Metacharacters
+
+```{r, echo=FALSE}
+library(knitr)
+
+ch <- c("\\\\\\\\", ".", "*", "?", "+", "{x}", "{x,}", "{x,y}", "[abc]", "[^abc]",
+        "[a-z]", "[^a-z]", "a|b", "\\\\\\\\d", "\\\\\\\\D", "\\\\\\\\s", 
+        "\\\\\\\\S", "\\\\\\\\w", "\\\\\\\\W",
+        "^", "$")
+ex <- c("Specifies a metacharacter",
+        "Any character",
+        "PE zero or more times",
+        "PE zero or one times",
+        "PE one or more times",
+        "PE x times",
+        "PE x or more times",
+        "PE x or more and y or fewer times",
+        "Any characters within the brackets",
+        "Any characters except those between the brackets",
+        "Any characters between a and z",
+        "Any characters except those between a and z",
+        "a or b",
+        "Any digit", "Any non-digit", "Any space", "Any non-space", "Any 'word'",
+        "Any 'non-word'", "Start of string", "End of string")
+
+kable(
+  data.frame(
+    Character = ch,
+    Explanation = ex
+  )
+)
+```
+
+### Using Regular Expressions in R
+
+The `grep()` function takes two arguments, a pattern, and text to search.
+
+```
+grep
+grepl
+sub
+gsub
+```
+
+```{r}
+grepl("\\B", c("aa", "b", "c", "."))
+```
+
+### `stringr`
+
+```{r, echo=FALSE}
+library(stringr)
+```
+
+```{r, eval=FALSE}
+str_cou
+```
+
+---
+
+Practice with regular expressions online: http://regexr.com/
+
+---
+
+[Home](index.html)

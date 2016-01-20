@@ -97,7 +97,7 @@ no credit for this course.
 
 #### Lecture 5
 
-- Regex & `stringr`
+- Strings, regex & `stringr`
     - [Notes](stringr.html)
     - [R Markdown](stringr.Rmd)
 - `dplyr`
