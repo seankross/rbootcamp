@@ -203,6 +203,282 @@ sub
 gsub</code></pre>
 <pre class="r"><code>grepl(&quot;\\B&quot;, c(&quot;aa&quot;, &quot;b&quot;, &quot;c&quot;, &quot;.&quot;))</code></pre>
 <pre><code>## [1]  TRUE FALSE FALSE FALSE</code></pre>
+</div>
+<div id="stringr" class="section level3">
+<h3><code>stringr</code></h3>
+<pre class="r"><code>str_count()
+str_detect()
+str_dup()
+str_extract()
+str_match()
+str_replace()
+str_split()
+str_to_lower()
+str_to_title()
+str_to_upper()
+str_trim()</code></pre>
+<pre class="r"><code>thanks_path &lt;- file.path(R.home(&quot;doc&quot;), &quot;THANKS&quot;)
+thanks &lt;- str_c(readLines(thanks_path), collapse = &quot;\n&quot;)
+thanks &lt;- word(thanks, 1, 3, fixed(&quot;\n\n&quot;))
+cat(str_wrap(thanks), &quot;\n&quot;)</code></pre>
+<pre><code>## R would not be what it is today without the invaluable help of these people,
+## who contributed by donating code, bug fixes and documentation: Valerio Aimale,
+## Thomas Baier, Henrik Bengtsson, Roger Bivand, Ben Bolker, David Brahm, G&quot;oran
+## Brostr&quot;om, Patrick Burns, Vince Carey, Saikat DebRoy, Brian D'Urso, Lyndon
+## Drake, Dirk Eddelbuettel, Claus Ekstrom, Sebastian Fischmeister, John Fox,
+## Paul Gilbert, Yu Gong, Gabor Grothendieck, Frank E Harrell Jr, Torsten Hothorn,
+## Robert King, Kjetil Kjernsmo, Roger Koenker, Philippe Lambert, Jan de Leeuw,
+## Jim Lindsey, Patrick Lindsey, Catherine Loader, Gordon Maclean, John Maindonald,
+## David Meyer, Ei-ji Nakama, Jens Oehlschaegel, Steve Oncley, Richard O'Keefe,
+## Hubert Palme, Roger D. Peng, Jose' C. Pinheiro, Tony Plate, Anthony Rossini,
+## Jonathan Rougier, Petr Savicky, Guenther Sawitzki, Marc Schwartz, Detlef Steuer,
+## Bill Simpson, Gordon Smyth, Adrian Trapletti, Terry Therneau, Rolf Turner,
+## Bill Venables, Gregory R. Warnes, Andreas Weingessel, Morten Welinder, James
+## Wettenhall, Simon Wood, and Achim Zeileis. Others have written code that has
+## been adopted by R and is acknowledged in the code files, including</code></pre>
+<pre class="r"><code>cat(str_wrap(thanks, width = 40), &quot;\n&quot;)</code></pre>
+<pre><code>## R would not be what it is today without
+## the invaluable help of these people,
+## who contributed by donating code, bug
+## fixes and documentation: Valerio Aimale,
+## Thomas Baier, Henrik Bengtsson, Roger
+## Bivand, Ben Bolker, David Brahm, G&quot;oran
+## Brostr&quot;om, Patrick Burns, Vince Carey,
+## Saikat DebRoy, Brian D'Urso, Lyndon
+## Drake, Dirk Eddelbuettel, Claus Ekstrom,
+## Sebastian Fischmeister, John Fox, Paul
+## Gilbert, Yu Gong, Gabor Grothendieck,
+## Frank E Harrell Jr, Torsten Hothorn,
+## Robert King, Kjetil Kjernsmo, Roger
+## Koenker, Philippe Lambert, Jan de
+## Leeuw, Jim Lindsey, Patrick Lindsey,
+## Catherine Loader, Gordon Maclean, John
+## Maindonald, David Meyer, Ei-ji Nakama,
+## Jens Oehlschaegel, Steve Oncley,
+## Richard O'Keefe, Hubert Palme, Roger
+## D. Peng, Jose' C. Pinheiro, Tony Plate,
+## Anthony Rossini, Jonathan Rougier,
+## Petr Savicky, Guenther Sawitzki, Marc
+## Schwartz, Detlef Steuer, Bill Simpson,
+## Gordon Smyth, Adrian Trapletti, Terry
+## Therneau, Rolf Turner, Bill Venables,
+## Gregory R. Warnes, Andreas Weingessel,
+## Morten Welinder, James Wettenhall, Simon
+## Wood, and Achim Zeileis. Others have
+## written code that has been adopted by R
+## and is acknowledged in the code files,
+## including</code></pre>
+<pre class="r"><code>cat(str_wrap(thanks, width = 60, indent = 2), &quot;\n&quot;)</code></pre>
+<pre><code>##   R would not be what it is today without the invaluable help
+## of these people, who contributed by donating code, bug fixes
+## and documentation: Valerio Aimale, Thomas Baier, Henrik
+## Bengtsson, Roger Bivand, Ben Bolker, David Brahm, G&quot;oran
+## Brostr&quot;om, Patrick Burns, Vince Carey, Saikat DebRoy, Brian
+## D'Urso, Lyndon Drake, Dirk Eddelbuettel, Claus Ekstrom,
+## Sebastian Fischmeister, John Fox, Paul Gilbert, Yu Gong,
+## Gabor Grothendieck, Frank E Harrell Jr, Torsten Hothorn,
+## Robert King, Kjetil Kjernsmo, Roger Koenker, Philippe
+## Lambert, Jan de Leeuw, Jim Lindsey, Patrick Lindsey,
+## Catherine Loader, Gordon Maclean, John Maindonald, David
+## Meyer, Ei-ji Nakama, Jens Oehlschaegel, Steve Oncley,
+## Richard O'Keefe, Hubert Palme, Roger D. Peng, Jose' C.
+## Pinheiro, Tony Plate, Anthony Rossini, Jonathan Rougier,
+## Petr Savicky, Guenther Sawitzki, Marc Schwartz, Detlef
+## Steuer, Bill Simpson, Gordon Smyth, Adrian Trapletti, Terry
+## Therneau, Rolf Turner, Bill Venables, Gregory R. Warnes,
+## Andreas Weingessel, Morten Welinder, James Wettenhall, Simon
+## Wood, and Achim Zeileis. Others have written code that has
+## been adopted by R and is acknowledged in the code files,
+## including</code></pre>
+<pre class="r"><code>cat(str_wrap(thanks, width = 60, exdent = 2), &quot;\n&quot;)</code></pre>
+<pre><code>## R would not be what it is today without the invaluable help
+##   of these people, who contributed by donating code, bug fixes
+##   and documentation: Valerio Aimale, Thomas Baier, Henrik
+##   Bengtsson, Roger Bivand, Ben Bolker, David Brahm, G&quot;oran
+##   Brostr&quot;om, Patrick Burns, Vince Carey, Saikat DebRoy, Brian
+##   D'Urso, Lyndon Drake, Dirk Eddelbuettel, Claus Ekstrom,
+##   Sebastian Fischmeister, John Fox, Paul Gilbert, Yu Gong,
+##   Gabor Grothendieck, Frank E Harrell Jr, Torsten Hothorn,
+##   Robert King, Kjetil Kjernsmo, Roger Koenker, Philippe
+##   Lambert, Jan de Leeuw, Jim Lindsey, Patrick Lindsey,
+##   Catherine Loader, Gordon Maclean, John Maindonald, David
+##   Meyer, Ei-ji Nakama, Jens Oehlschaegel, Steve Oncley,
+##   Richard O'Keefe, Hubert Palme, Roger D. Peng, Jose' C.
+##   Pinheiro, Tony Plate, Anthony Rossini, Jonathan Rougier,
+##   Petr Savicky, Guenther Sawitzki, Marc Schwartz, Detlef
+##   Steuer, Bill Simpson, Gordon Smyth, Adrian Trapletti, Terry
+##   Therneau, Rolf Turner, Bill Venables, Gregory R. Warnes,
+##   Andreas Weingessel, Morten Welinder, James Wettenhall, Simon
+##   Wood, and Achim Zeileis. Others have written code that has
+##   been adopted by R and is acknowledged in the code files,
+##   including</code></pre>
+<pre class="r"><code>cat(str_wrap(thanks, width = 0, exdent = 2), &quot;\n&quot;)</code></pre>
+<pre><code>## R
+##   would
+##   not
+##   be
+##   what
+##   it
+##   is
+##   today
+##   without
+##   the
+##   invaluable
+##   help
+##   of
+##   these
+##   people,
+##   who
+##   contributed
+##   by
+##   donating
+##   code,
+##   bug
+##   fixes
+##   and
+##   documentation:
+##   Valerio
+##   Aimale,
+##   Thomas
+##   Baier,
+##   Henrik
+##   Bengtsson,
+##   Roger
+##   Bivand,
+##   Ben
+##   Bolker,
+##   David
+##   Brahm,
+##   G&quot;oran
+##   Brostr&quot;om,
+##   Patrick
+##   Burns,
+##   Vince
+##   Carey,
+##   Saikat
+##   DebRoy,
+##   Brian
+##   D'Urso,
+##   Lyndon
+##   Drake,
+##   Dirk
+##   Eddelbuettel,
+##   Claus
+##   Ekstrom,
+##   Sebastian
+##   Fischmeister,
+##   John
+##   Fox,
+##   Paul
+##   Gilbert,
+##   Yu
+##   Gong,
+##   Gabor
+##   Grothendieck,
+##   Frank
+##   E
+##   Harrell
+##   Jr,
+##   Torsten
+##   Hothorn,
+##   Robert
+##   King,
+##   Kjetil
+##   Kjernsmo,
+##   Roger
+##   Koenker,
+##   Philippe
+##   Lambert,
+##   Jan
+##   de
+##   Leeuw,
+##   Jim
+##   Lindsey,
+##   Patrick
+##   Lindsey,
+##   Catherine
+##   Loader,
+##   Gordon
+##   Maclean,
+##   John
+##   Maindonald,
+##   David
+##   Meyer,
+##   Ei-
+##   ji
+##   Nakama,
+##   Jens
+##   Oehlschaegel,
+##   Steve
+##   Oncley,
+##   Richard
+##   O'Keefe,
+##   Hubert
+##   Palme,
+##   Roger
+##   D.
+##   Peng,
+##   Jose'
+##   C.
+##   Pinheiro,
+##   Tony
+##   Plate,
+##   Anthony
+##   Rossini,
+##   Jonathan
+##   Rougier,
+##   Petr
+##   Savicky,
+##   Guenther
+##   Sawitzki,
+##   Marc
+##   Schwartz,
+##   Detlef
+##   Steuer,
+##   Bill
+##   Simpson,
+##   Gordon
+##   Smyth,
+##   Adrian
+##   Trapletti,
+##   Terry
+##   Therneau,
+##   Rolf
+##   Turner,
+##   Bill
+##   Venables,
+##   Gregory
+##   R.
+##   Warnes,
+##   Andreas
+##   Weingessel,
+##   Morten
+##   Welinder,
+##   James
+##   Wettenhall,
+##   Simon
+##   Wood,
+##   and
+##   Achim
+##   Zeileis.
+##   Others
+##   have
+##   written
+##   code
+##   that
+##   has
+##   been
+##   adopted
+##   by
+##   R
+##   and
+##   is
+##   acknowledged
+##   in
+##   the
+##   code
+##   files,
+##   including</code></pre>
 <hr />
 <p>Practice with regular expressions online: <a href="http://regexr.com/">http://regexr.com/</a></p>
 <hr />

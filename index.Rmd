@@ -91,6 +91,9 @@ no credit for this course.
 - Basic Linear Modeling
     - [Notes](linear.html)
     - [R Markdown](linear.Rmd)
+- `apply`
+    - [Notes](apply.html)
+    - [R Markdown](apply.Rmd)
 - *Extras*
     - [swirl Exercises](hw3.html)
     - [Video](https://youtu.be/-Mn8EXSeJfs)
@@ -100,29 +103,20 @@ no credit for this course.
 - Strings, regex & `stringr`
     - [Notes](stringr.html)
     - [R Markdown](stringr.Rmd)
-- `dplyr`
+- `dplyr` & `magrittr`
     - [Notes](dplyr.html)
     - [R Markdown](dplyr.Rmd)
+- *Extras*
+    - [Video Part 1](https://youtu.be/7wkYczUDZqA)
+    - [Video Part 2](https://youtu.be/ENx063dHCqI)
+    - [Code from lecture](lec5.R)
 
     
 #### Lecture 6
 
-- Errors
-    - [Notes](errors.html)
-    - [R Markdown](errors.Rmd)
-- Scope
-    - [Notes](scope.html)
-    - [R Markdown](scope.Rmd)
-- `apply`
-    - [Notes](apply.html)
-    - [R Markdown](apply.Rmd)
-- User Defined Operators
-    - [Notes](operators.html)
-    - [R Markdown](operators.Rmd)
-- Pipes
-    - [Notes](pipes.html)
-    - [R Markdown](pipes.Rmd)
-
+- Shiny
+    - [Notes](shiny.html)
+    - [R Markdown](shiny.Rmd)
 
 ---
 
