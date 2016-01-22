@@ -10,7 +10,16 @@ Interactive Tutorials:
 - [swirl](http://www.swirlstats.com)
 - [Datacamp](https://www.datacamp.com/home)
 
-Books:
+Books (all free):
 
+- [R Programming for Data Science](https://leanpub.com/rprogramming)  by Roger Peng
+- [Exploratory Data Analysis with R](https://leanpub.com/exdata) by Roger Peng
+- [Regression Models for Data Science in R](https://leanpub.com/regmods) by Brian Caffo
+- [Developing Data Products in R](https://leanpub.com/ddp) by Brian Caffo
+- [The Elements of Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/) by Trevor Hastie, Robert Tibshirani, and Jerome Friedman
 
 Online Courses:
+
+- [The Johns Hopkins Data Science Specialization on Coursera.org](https://www.coursera.org/specializations/jhu-data-science/1)
+- [Standford University's Statistical Learning Course](https://lagunita.stanford.edu/courses/HumanitiesScience/StatLearning/Winter2014/about)
+- [Udacity's Data Analysis with R Course](https://www.udacity.com/courses/ud651)
