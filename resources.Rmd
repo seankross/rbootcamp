@@ -1,0 +1,16 @@
+---
+title: "More R Resources"
+author: "Sean Kross"
+date: "January 22, 2016"
+output: html_document
+---
+
+Interactive Tutorials:
+
+- [swirl](http://www.swirlstats.com)
+- [Datacamp](https://www.datacamp.com/home)
+
+Books:
+
+
+Online Courses:

@@ -110,13 +110,14 @@ no credit for this course.
     - [Video Part 1](https://youtu.be/7wkYczUDZqA)
     - [Video Part 2](https://youtu.be/ENx063dHCqI)
     - [Code from lecture](lec5.R)
-
     
 #### Lecture 6
 
 - Shiny
     - [Notes](shiny.html)
     - [R Markdown](shiny.Rmd)
+- *Extras*
+    - [More R Resources](resources.html)
 
 ---
 
