@@ -87,7 +87,7 @@ To get this app running you you have two options. You can create the `server.R`
 and `ui.R` files in your current working directory and then copy and paste the 
 code into their respective files. Then use the function `runApp()` to launch
 the app. Alternatively you can get this example running immediately with the 
-command `runGitHub("seankross/rbootcamp", subdir = "app1")`. After you launch
+command `runGitHub("seankross/rbootcamp", ref = "gh-pages", subdir = "app1")`. After you launch
 the app, play around with it a little and then resume reading. As you can see
 each time you change the text inside of the text box, the text on the page
 changes. You can build on this idea so that different combinations of inputs
@@ -151,8 +151,8 @@ my examples.
 #### Plot a Point
 
 You canget this example running with the command 
-`runGitHub("seankross/rbootcamp", subdir = "app2")`. You can view the code for
-the `server.R` file [here]() and the `ui.R` file [here]().
+`runGitHub("seankross/rbootcamp", ref = "gh-pages", subdir = "app2")`. You can view the code for
+the `server.R` file [here](https://github.com/seankross/rbootcamp/blob/gh-pages/app2/server.R) and the `ui.R` file [here](https://github.com/seankross/rbootcamp/blob/gh-pages/app2/ui.R).
 
 Starting with `server.R`, I used the `renderPlot()` function to draw the plot
 on the page. The `plot()` function only plots one point which I retrieve from
@@ -163,8 +163,8 @@ and the second determiens the y coordinate.
 #### Simulate Dice Rolls
 
 You canget this example running with the command 
-`runGitHub("seankross/rbootcamp", subdir = "app3")`. You can view the code for
-the `server.R` file [here]() and the `ui.R` file [here]().
+`runGitHub("seankross/rbootcamp", ref = "gh-pages", subdir = "app3")`. You can view the code for
+the `server.R` file [here](https://github.com/seankross/rbootcamp/blob/gh-pages/app3/server.R) and the `ui.R` file [here](https://github.com/seankross/rbootcamp/blob/gh-pages/app3/ui.R).
 
 In `server.R`: `input$rollButton` causes the graph to be redrawn and for the
 dice rolling simulation to be redone every time a button in the sidebar is
@@ -173,17 +173,18 @@ clicked. This is specified by `actionButton()` in `ui.R`.
 #### Predict the Volume of a Tree from its Girth
 
 You canget this example running with the command 
-`runGitHub("seankross/rbootcamp", subdir = "app4")`. You can view the code for
-the `server.R` file [here]() and the `ui.R` file [here]().
+`runGitHub("seankross/rbootcamp", ref = "gh-pages", subdir = "app4")`. You can view the code for
+the `server.R` file [here](https://github.com/seankross/rbootcamp/blob/gh-pages/app4/server.R) and the `ui.R` file [here](https://github.com/seankross/rbootcamp/blob/gh-pages/app4/ui.R).
 
 #### Make Your Own Stock Charts
 
 You canget this example running with the command 
-`runGitHub("seankross/rbootcamp", subdir = "app5")`. You can view the code for
-the `server.R` file [here]() and the `ui.R` file [here]().
+`runGitHub("seankross/rbootcamp", ref = "gh-pages", subdir = "app5")`. You can view the code for
+the `server.R` file [here](https://github.com/seankross/rbootcamp/blob/gh-pages/app5/server.R) and the `ui.R` file [here](https://github.com/seankross/rbootcamp/blob/gh-pages/app5/ui.R).
 
 This app uses the `quantmod` library, which allows you to pull stock market data
-into R.
+into R. I'm using the `dateRangeInput()` function so that the user can select
+a date a from a calendar.
 
 ### Sharing Shiny Apps
 
@@ -208,4 +209,4 @@ their website for more details.
 
 ---
 
-[Home](index.html)
+### [Home](index.html)

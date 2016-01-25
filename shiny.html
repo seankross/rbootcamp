@@ -108,7 +108,7 @@ shinyUI(fluidPage(
     )
   )
 ))</code></pre>
-<p>To get this app running you you have two options. You can create the <code>server.R</code> and <code>ui.R</code> files in your current working directory and then copy and paste the code into their respective files. Then use the function <code>runApp()</code> to launch the app. Alternatively you can get this example running immediately with the command <code>runGitHub(&quot;seankross/rbootcamp&quot;, subdir = &quot;app1&quot;)</code>. After you launch the app, play around with it a little and then resume reading. As you can see each time you change the text inside of the text box, the text on the page changes. You can build on this idea so that different combinations of inputs affect what the user sees on the screen.</p>
+<p>To get this app running you you have two options. You can create the <code>server.R</code> and <code>ui.R</code> files in your current working directory and then copy and paste the code into their respective files. Then use the function <code>runApp()</code> to launch the app. Alternatively you can get this example running immediately with the command <code>runGitHub(&quot;seankross/rbootcamp&quot;, ref = &quot;gh-pages&quot;, subdir = &quot;app1&quot;)</code>. After you launch the app, play around with it a little and then resume reading. As you can see each time you change the text inside of the text box, the text on the page changes. You can build on this idea so that different combinations of inputs affect what the user sees on the screen.</p>
 </div>
 <div id="the-details" class="section level3">
 <h3>The Details</h3>
@@ -121,31 +121,50 @@ shinyUI(fluidPage(
 <blockquote>
 <p>“Good artists copy. Great artists steal.” - <a href="https://en.wikipedia.org/wiki/Banksy">Banksy</a></p>
 </blockquote>
-<p>I have never started writing a Shiny app from scratch in my life, and I suggest that you don’t either. In my experience the best way to write Shiny apps is to look at apps that others have made, and then to adapt those apps to your purpose. At the bottom of the page there are a few links to where you can find examples of Shiny apps. I’ll show you a few more example apps. I highly encourage you to steal and remix my examples. One of the most useful things you can do with Shiny is you can display graphs, and those graphs can change based on user input.</p>
+<p>I have never started writing a Shiny app from scratch in my life, and I suggest that you don’t either. In my experience the best way to write Shiny apps is to look at apps that others have made, and then to adapt those apps to your purpose. The best way to learn Shiny is too tinker with apps that are availible online. At the bottom of the page there are a few links to where you can find examples of Shiny apps. Play around with changing the UI elements, modify some values, and see what effect you changes have on the app. I’ll show you a few more example apps. I highly encourage you to play with, modify, remix, and steal my examples.</p>
 <div id="plot-a-point" class="section level4">
 <h4>Plot a Point</h4>
-<p>You canget this example running with the command <code>runGitHub(&quot;seankross/rbootcamp&quot;, subdir = &quot;app2&quot;)</code>. You can view the code for the <code>server.R</code> file <a href>here</a> and the <code>ui.R</code> file <a href>here</a>.</p>
+<p>You canget this example running with the command <code>runGitHub(&quot;seankross/rbootcamp&quot;, ref = &quot;gh-pages&quot;, subdir = &quot;app2&quot;)</code>. You can view the code for the <code>server.R</code> file <a href="https://github.com/seankross/rbootcamp/blob/gh-pages/app2/server.R">here</a> and the <code>ui.R</code> file <a href="https://github.com/seankross/rbootcamp/blob/gh-pages/app2/ui.R">here</a>.</p>
 <p>Starting with <code>server.R</code>, I used the <code>renderPlot()</code> function to draw the plot on the page. The <code>plot()</code> function only plots one point which I retrieve from <code>input</code>. Inside of <code>ui.R</code> I use the <code>sliderInput()</code> function to make two sliders appear on the page. The first determines the x coordinate of the plotted point, and the second determiens the y coordinate.</p>
 </div>
 <div id="simulate-dice-rolls" class="section level4">
 <h4>Simulate Dice Rolls</h4>
-<ul>
-<li>dice rolling simulator with download</li>
-<li>tree model results</li>
-<li>stock performance</li>
-</ul>
+<p>You canget this example running with the command <code>runGitHub(&quot;seankross/rbootcamp&quot;, ref = &quot;gh-pages&quot;, subdir = &quot;app3&quot;)</code>. You can view the code for the <code>server.R</code> file <a href="https://github.com/seankross/rbootcamp/blob/gh-pages/app3/server.R">here</a> and the <code>ui.R</code> file <a href="https://github.com/seankross/rbootcamp/blob/gh-pages/app3/ui.R">here</a>.</p>
+<p>In <code>server.R</code>: <code>input$rollButton</code> causes the graph to be redrawn and for the dice rolling simulation to be redone every time a button in the sidebar is clicked. This is specified by <code>actionButton()</code> in <code>ui.R</code>.</p>
+</div>
+<div id="predict-the-volume-of-a-tree-from-its-girth" class="section level4">
+<h4>Predict the Volume of a Tree from its Girth</h4>
+<p>You canget this example running with the command <code>runGitHub(&quot;seankross/rbootcamp&quot;, ref = &quot;gh-pages&quot;, subdir = &quot;app4&quot;)</code>. You can view the code for the <code>server.R</code> file <a href="https://github.com/seankross/rbootcamp/blob/gh-pages/app4/server.R">here</a> and the <code>ui.R</code> file <a href="https://github.com/seankross/rbootcamp/blob/gh-pages/app4/ui.R">here</a>.</p>
+</div>
+<div id="make-your-own-stock-charts" class="section level4">
+<h4>Make Your Own Stock Charts</h4>
+<p>You canget this example running with the command <code>runGitHub(&quot;seankross/rbootcamp&quot;, ref = &quot;gh-pages&quot;, subdir = &quot;app5&quot;)</code>. You can view the code for the <code>server.R</code> file <a href="https://github.com/seankross/rbootcamp/blob/gh-pages/app5/server.R">here</a> and the <code>ui.R</code> file <a href="https://github.com/seankross/rbootcamp/blob/gh-pages/app5/ui.R">here</a>.</p>
+<p>This app uses the <code>quantmod</code> library, which allows you to pull stock market data into R. I’m using the <code>dateRangeInput()</code> function so that the user can select a date a from a calendar.</p>
+</div>
+</div>
+<div id="sharing-shiny-apps" class="section level3">
+<h3>Sharing Shiny Apps</h3>
+<p>If you want to share an app you’ve made you can always share the <code>ui.R</code> and <code>server.R</code> that you’ve created, but you can also host your app online so that anyone with a web browser can access it. A web service called <a href="http://www.shinyapps.io/">shinyapps.io</a> will even host your app for free. See their website for more details.</p>
 <hr />
 </div>
+<div id="learn-more-about-shiny-apps" class="section level3">
+<h3>Learn More About Shiny Apps</h3>
+<ul>
+<li><a href="http://shiny.rstudio.com/tutorial/">The Official Tutorial</a></li>
+<li><a href="https://leanpub.com/ddp">Developing Data Products in R</a> by Brian Caffo</li>
+</ul>
 </div>
 <div id="examples-of-shiny-apps" class="section level3">
 <h3>Examples of Shiny apps:</h3>
 <ul>
 <li><a href="http://shiny.rstudio.com/gallery/">Shiny Gallery</a></li>
 <li><a href="https://www.rstudio.com/products/shiny/shiny-user-showcase/">Shiny User Showcase</a> by RStudio</li>
-<li><a href="http://www.showmeshiny.com/" class="uri">http://www.showmeshiny.com/</a> A gallery of Shiny apps.</li>
+<li><a href="http://www.showmeshiny.com/">http://www.showmeshiny.com/</a> A gallery of Shiny apps.</li>
 </ul>
 <hr />
-<p><a href="index.html">Home</a></p>
+</div>
+<div id="home" class="section level3">
+<h3><a href="index.html">Home</a></h3>
 </div>
 
 
