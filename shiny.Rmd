@@ -1,0 +1,211 @@
+---
+title: "Shiny"
+author: "Sean Kross"
+date: "January 22, 2016"
+output: html_document
+---
+
+One big motivation for learning a programming language is that you
+will be able to use that programming language to make things. I hope that when
+you finish this course you will feel like you can make three things:
+
+1. Functions - R functions that perform tasks and are useful to you or
+other people.
+2. Analyses - Combinations of R code and prose, preferably in the form of R
+Markdown documents, that you can use to communicate insights about data.
+3. Applications - covered in this lecture.
+
+The sad reality of computer programming is that few people want to run your
+source code, and even fewer people want to read your code. A big appeal of
+sharing functions is that a function is a sort of contract that states: if
+you provide this function with arguments, this function will perform a specific
+task, or return a kind of value (a value of a specified type). The user of the
+function need not worry about what goes on inside the function, as long as they
+provide arguments and get results they should be happy.
+
+Unfortunately the usefulness of functions quickly evaporates when you realize
+that most people are neither able nor willing to run functions that you have
+written. Just recall three weeks ago before you started this course, it's likely
+that you didn't know what function was in the context of computer programming.
+You could share your analysis as a web page which may include code you've
+written and important results, but your analysis is still a static document.
+In an R markdown document there's no way for somebody who isn't willing to 
+tinker with your R code to interact with simulations, models, or graphics that 
+you've built.
+
+Thankfully there is another way: you can produce a web application. The most
+popular web application library in R is called Shiny, whick you should download
+now by entering `install.packages("shiny")` into your R console. Once you've
+installed the package enter `library(shiny)` into your console to load the
+package.
+
+### The Basics
+
+To create a Shiny application you need to create two files: `ui.R` and
+`server.R`. The core "logic" - the R code you've been learning how to use in
+the last five lectures - is primarily written in the `server.R` file. The
+attributes of the user interface are specified in the `ui.R` file. Let's take a
+look at a simple `server.R` and `ui.R`:
+
+**server.R**
+
+```
+library(shiny)
+
+shinyServer(function(input, output) {
+
+  output$out_text <- renderText({
+    input$in_text
+  })
+  
+})
+```
+
+**ui.R**
+
+```
+library(shiny)
+
+shinyUI(fluidPage(
+  titlePanel("My First App"),
+  
+  sidebarLayout(
+    sidebarPanel(
+      textInput("in_text",
+                  "Type something in here:",
+                  value = "Hello World!")
+    ),
+    
+    mainPanel(
+      textOutput("out_text")
+    )
+  )
+))
+```
+
+To get this app running you you have two options. You can create the `server.R` 
+and `ui.R` files in your current working directory and then copy and paste the 
+code into their respective files. Then use the function `runApp()` to launch
+the app. Alternatively you can get this example running immediately with the 
+command `runGitHub("seankross/rbootcamp", subdir = "app1")`. After you launch
+the app, play around with it a little and then resume reading. As you can see
+each time you change the text inside of the text box, the text on the page
+changes. You can build on this idea so that different combinations of inputs
+affect what the user sees on the screen.
+
+### The Details
+
+Let's walk through the code step-by-step starting with `server.R`. First you
+need to load Shiny with `library(shiny)` and then you're off to the races. The
+`shinyServer()` function takes a function as it's only argument. In this case
+I've defined a function without assigning it a name. This is known as an
+anonymous function since it's only defined as an argument to `shinyServer()`.
+This anonymous function takes two arguments, `input` and `output`. You can
+think of both of these arguments as lists since we'll be accessing their
+contents with the `$` operator. Within the anonymous function I use the
+`renderText()` function, which takes an R expression as its argument. I've
+wrapped this R expression in curly brackets (`{}`) so that the expression can
+span multiple lines. The variable `input$in_text` is assigned inside of `ui.R`,
+so we simply return whatever the value of `input$in_text` is.
+
+Moving on to `ui.R`, the `shinyUI()` function takes one argument, a "ui"
+type data structure, which is special to Shiny. I use the `fluidPage()` function
+to create a "ui." The `fluidPage()` function accepts multiple arguments, where
+each argument becomes a part of the web page. The `titlePanel()` function
+creates a title for the page when provided with a string. The `sidebarLayout()`
+function creates the part of the page below the title, and specifies that this
+page will have two panels: a sidebar and a main panel. The `sidebarPanel()`
+function creates the layout of the sidebar. It can take many arguments, but in
+this case we only specify a text box which we define with the `textInput()`
+function. The `textInput()` function takes three main arguments. The first
+argument specifies the name of the value within the `input` list that appears in
+`server.R`. The second argument is the text that will appear above the text box,
+and the third argument is the initial value of the text in the text box. Finally
+the `mainPanel()` function defines what is contained in the main part of the
+web page. The `mainPanel()` function can also take multiple arguments, but in
+this case the main part of our page is only going to feature text, which is
+created with the `textOutput()` function. The only argument that is provided to
+`textOutput()` is a string which identifies the name of the value stored in the
+`output` list, which is assigned inside as the result of `renderText()` in
+`server.R`.
+
+That was a verbose explanation, but I hope that devling into these details will
+give you a better idea of how Shiny apps are structured. Thankfully you usually
+don't have to worry about every detail of a Shiny app, chances are somebody else
+has already done most of the hard work, which we'll discuss in the next section.
+
+### Building Your Own Shiny Apps
+
+> "Good artists copy. Great artists steal." - [Banksy](https://en.wikipedia.org/wiki/Banksy)
+
+I have never started writing a Shiny app from scratch in my life, and I suggest
+that you don't either. In my experience the best way to write Shiny apps is to
+look at apps that others have made, and then to adapt those apps to your 
+purpose. The best way to learn Shiny is too tinker with apps that are availible
+online. At the bottom of the page there are a few links to where you can find 
+examples of Shiny apps. Play around with changing the UI elements, modify some 
+values, and see what effect you changes have on the app. I'll show you a few 
+more example apps. I highly encourage you to play with, modify, remix, and steal
+my examples. 
+
+#### Plot a Point
+
+You canget this example running with the command 
+`runGitHub("seankross/rbootcamp", subdir = "app2")`. You can view the code for
+the `server.R` file [here]() and the `ui.R` file [here]().
+
+Starting with `server.R`, I used the `renderPlot()` function to draw the plot
+on the page. The `plot()` function only plots one point which I retrieve from
+`input`. Inside of `ui.R` I use the `sliderInput()` function to make two sliders
+appear on the page. The first determines the x coordinate of the plotted point,
+and the second determiens the y coordinate.
+
+#### Simulate Dice Rolls
+
+You canget this example running with the command 
+`runGitHub("seankross/rbootcamp", subdir = "app3")`. You can view the code for
+the `server.R` file [here]() and the `ui.R` file [here]().
+
+In `server.R`: `input$rollButton` causes the graph to be redrawn and for the
+dice rolling simulation to be redone every time a button in the sidebar is
+clicked. This is specified by `actionButton()` in `ui.R`.
+
+#### Predict the Volume of a Tree from its Girth
+
+You canget this example running with the command 
+`runGitHub("seankross/rbootcamp", subdir = "app4")`. You can view the code for
+the `server.R` file [here]() and the `ui.R` file [here]().
+
+#### Make Your Own Stock Charts
+
+You canget this example running with the command 
+`runGitHub("seankross/rbootcamp", subdir = "app5")`. You can view the code for
+the `server.R` file [here]() and the `ui.R` file [here]().
+
+This app uses the `quantmod` library, which allows you to pull stock market data
+into R.
+
+### Sharing Shiny Apps
+
+If you want to share an app you've made you can always share the `ui.R` and
+`server.R` that you've created, but you can also host your app online so that
+anyone with a web browser can access it. A web service called 
+[shinyapps.io](http://www.shinyapps.io/) will even host your app for free. See
+their website for more details.
+
+---
+
+### Learn More About Shiny Apps
+
+- [The Official Tutorial](http://shiny.rstudio.com/tutorial/)
+- [Developing Data Products in R](https://leanpub.com/ddp) by Brian Caffo
+
+### Examples of Shiny apps:
+
+- [Shiny Gallery](http://shiny.rstudio.com/gallery/)
+- [Shiny User Showcase](https://www.rstudio.com/products/shiny/shiny-user-showcase/) by RStudio
+- http://www.showmeshiny.com/ A gallery of Shiny apps.
+
+---
+
+[Home](index.html)
